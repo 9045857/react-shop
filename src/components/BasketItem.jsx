@@ -27,6 +27,7 @@ export function BasketItem(props) {
                     >
                         remove
                     </i>
+                    <span className="item-quantity"> {quantity}</span>
                     <i
                         className='material-icons btn-basket-item btn-add-basket-item'
                         onClick={() => addOrder(props)}

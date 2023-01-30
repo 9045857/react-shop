@@ -163,3 +163,12 @@ label.search-type-rb {
         transform: translateY(0rem);
     }
 }
+
+.item-quantity{
+    font-size: 20px;
+    vertical-align: top;
+    text-align: center;
+
+    color: black;
+    margin: 0 10px;  
+}
