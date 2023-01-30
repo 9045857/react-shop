@@ -1,13 +1,165 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+    padding: 0 1rem;
+}
+
+.content {
+    min-height: calc(100vh - 70px - 64px);
+    padding: 1.5rem;
+}
+
+.goods {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+label.search-type-rb {
+    margin-right: 4rem;
+}
+
+.price {
+    font-size: 1.3rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+.card-content {
+    flex-grow: 1;
+}
+
+.cart-quantity {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.4rem;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(228, 78, 78);
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.total-price {
+    position: absolute;
+    bottom: -0.5rem;
+
+    display: block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    border-radius: 20%;
+    background-color: rgb(115, 111, 240);
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10%;
+
+    position: sticky;
+    top: 1rem;
+
+    width: 4rem;
+
+    right: 2rem;
+    bottom: 1rem;
+    margin-left: 90%;
+
+    cursor: pointer;
+    z-index: 5;
+    padding: 1rem;
+}
+
+@media (min-width: 767px) {
+    .cart {
+        top: 1rem;
+        bottom: unset;
+        margin-left: 105%;
+    }
+}
+
+@keyframes show-basket {
+    from {
+        top: 70%;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+.basket {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #fff;
+    width: 50%;
+    max-width: 95%;
+
+    -webkit-box-shadow: 0px 1px 11px 4px rgba(14, 53, 84, 0.51);
+    -moz-box-shadow: 0px 1px 11px 4px rgba(14, 53, 84, 0.51);
+    box-shadow: 0px 1px 11px 4px rgba(14, 53, 84, 0.51);
+
+    animation: show-basket 300ms ease-in-out;
+}
+
+.btn-basket-item {
+    cursor: pointer;
+}
+
+.btn-add-basket-item {
+    margin-right: 1rem;
+}
+
+.close-basket {
+    cursor: pointer;
+    position: absolute;
+    right: 0.6rem;
+}
+
+.basket-item-image {
+    height: 2rem;
+    margin: -0.6rem 1rem -0.6rem 0;
+}
+
+#toast-container {
+    top: 3rem !important;
+    animation: fade-in 250ms ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
 }
